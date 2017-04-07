@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Action per la gestione base dell'applicazione. Queste action vanno utilizzate 
+	nel caso in cui si utilizzi il template di default offerti dal framework -->
+<ewafAction>
+
+	<action url="/listAppsForProfiles" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.ListApplicationAction</actionClass>
+		<outputMapping type="Screen" name="OK"	value="/pm/apps2.jsp" />
+	</action>
+
+	<action url="/listApplicationProfiles" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.profiles.ListProfilesByApplicationAction</actionClass>
+		<outputMapping type="Screen" name="OK"	value="/pm/list.jsp" />
+	</action>
+	
+	<action url="/addPermissionForApplication" security="true" initializeAtStartup="false" >
+		<description>Aggiunge un permesso applicativo (grant)</description>
+		<actionClass>jfr.webapp.placeholdermanager.profiles.AddPermissionForApplicationAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/listApplicationProfiles" />
+		<securityProperty name="PERMISSION" 	value="addApplicationProfile" />
+	</action>
+	
+	<action url="/addRoleForApplication" security="true" initializeAtStartup="false" >
+		<description>Aggiunge un ruolo applicativo</description>
+		<actionClass>jfr.webapp.placeholdermanager.profiles.AddRoleForApplicationAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/listApplicationProfiles" />
+		<securityProperty name="PERMISSION" 	value="addApplicationProfile" />
+	</action>
+		
+	<action url="/updateApplicationProfile" security="true" initializeAtStartup="false" >
+		<description>Aggiorna la mappatura ruolo-profilo</description>
+		<actionClass>jfr.webapp.placeholdermanager.profiles.UpdateApplicationProfileAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/listApplicationProfiles" />
+		
+	</action>
+	
+</ewafAction>

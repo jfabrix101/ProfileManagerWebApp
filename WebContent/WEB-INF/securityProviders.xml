@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityProviders>
+   <providers class="java.util.ArrayList">
+      
+      <!-- PRIMARY PROVIDER - disabled   -->
+      <security name="name" enabled="false" providerClass="com.provider.class">
+         <param name="param1" value="value1"/>
+      </security>
+      
+      <security name="fake" enabled="true" providerClass="jfabrix101.ewafx.security.FakeSecurityProvider2">
+         <param name="USERNAME@PASSWORD" value="ROLENAME,permission1,permission2,permission3,..."/>
+         <param name="frusso@password" value="user,addApplication,removeApplication,importApplicationXml,exportApplicationXml,addApplicationProfile"/>
+         <param name="admin@password" value="admin,modifyPlaceholder"/>
+      </security>
+      
+      <security name="LinuxFileSystem" enabled="true" providerClass="jfabrix101.ewafx.security.FileSystemSecurityProvider">
+         <param name="path" value="/home/frusso/Desktop/TEMP/"/>
+         <param name="filePrefix" value="user_"/>
+         <param name="fileExtension" value=".txt"/>
+      </security>
+      
+      <security name="MacFileSystem" enabled="true" providerClass="jfabrix101.ewafx.security.FileSystemSecurityProvider">
+         <param name="path" value="/Users/jfabrix101/Desktop/TEMP/"/>
+         <param name="filePrefix" value="user_"/>
+         <param name="fileExtension" value=".txt"/>
+      </security>
+      
+   </providers>
+</securityProviders>

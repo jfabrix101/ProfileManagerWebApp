@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Definzione dei template per gli SCREEN.
+	
+	Nel caso di 'property' che rappresentino una valore, e' possibile
+	far riferimento a valori presenti in request, session o application
+	mediante la sintassi
+	
+	${session.chiave} 
+	${session.chiave.attributo} 
+	
+	che verra' tradotto in
+	
+	(session.getAttribute("chiave")).toString();
+	(session.getAttribute("chiave").getAttributo()).toString();
+	
+-->
+<screenDefinition>
+	
+	<screen name="MASTER" template="/ewafJspTemplate/template.jsp" extendsScreen="" >
+		<param name="menuLeft" 	value="" />
+		<param name="keywords" 	value="feed" />
+	</screen>
+	
+	
+</screenDefinition>

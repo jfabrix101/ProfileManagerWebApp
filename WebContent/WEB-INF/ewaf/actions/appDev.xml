@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Action per la gestione base dell'applicazione. Queste action vanno utilizzate 
+	nel caso in cui si utilizzi il template di default offerti dal framework -->
+<ewafAction>
+
+	
+	<!--  Reoload XML -->
+	<action url="/ewafReloadXML" security="false">
+		
+		<description>Ricarica i file di configurazine del framework</description>
+		<actionClass>jfabrix101.ewaf.servlet.ICReloadXmlAction</actionClass>
+		<configProperty name="enabled" value="true" />
+		<outputMapping type="Screen" name="OK"	value="/index.jsp" />
+		
+		<!-- 
+		<securityProperty name="ROLES" 			value="" />
+		<securityProperty name="PERMISSIONS" 	value="developMode" />
+		 -->
+	</action>
+
+
+	<!--  Action per la diagnostica -->
+	<action url="/snoop" screenForward="/ewafJspTemplate/snoop.jsp" security="false">
+		<description>Visualizza informazioni sullo stato dell'applicazione</description>
+		<securityProperty name="PERMISSIONS" 	value="developMode" />
+	</action>	
+
+
+
+</ewafAction>

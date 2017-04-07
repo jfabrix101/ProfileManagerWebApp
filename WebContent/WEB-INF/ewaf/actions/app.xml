@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Action per la gestione base dell'applicazione. Queste action vanno utilizzate 
+	nel caso in cui si utilizzi il template di default offerti dal framework -->
+<ewafAction>
+
+
+	<action url="/listApps" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.ListApplicationAction</actionClass>
+		<outputMapping type="Screen" name="OK"	value="/apps.jsp" />
+		<outputMapping type="Screen" name="ERROR"	value="/apps.jsp" />
+	</action>
+	
+	
+	<action url="/listAppsForPlaceholders" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.ListApplicationAction</actionClass>
+		<outputMapping type="Screen" name="OK"	value="/apps3.jsp" />
+		<outputMapping type="Screen" name="ERROR"	value="/apps3.jsp" />
+	</action>
+	
+	<action url="/addApplication" security="true" initializeAtStartup="false" >
+		<description>Aggiunge una applicazione</description>
+		<actionClass>jfr.webapp.placeholdermanager.AddApplicationAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/editApplication" />
+		<outputMapping type="Url" name="ERROR"	value="/listApps" />
+		<securityProperty name="PERMISSION" 	value="addApplication" />
+	</action>
+	
+	<action url="/editApplication" security="true" initializeAtStartup="false" >
+		<description>Modifica una applicazione</description>
+		<actionClass>jfr.webapp.placeholdermanager.EditApplicationAction</actionClass>
+		<outputMapping type="Screen" name="OK"	value="/editApplication.jsp" />
+		<outputMapping type="Url" name="ERROR"	value="/listApps" />
+	</action>
+		
+	<action url="/addPlaceholder" security="true" initializeAtStartup="false" >
+		<description>Modifica una applicazione</description>
+		<actionClass>jfr.webapp.placeholdermanager.AddPlaceholderAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/editApplication" />		
+	</action>
+	
+	<action url="/removePlaceholder" security="true" initializeAtStartup="false" >
+		<description>Modifica una applicazione</description>
+		<actionClass>jfr.webapp.placeholdermanager.RemovePlaceholderAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/editApplication" />		
+	</action>
+	
+	<action url="/updateFlagPlaceholder" security="true" initializeAtStartup="false" >
+		<description>Modifica una applicazione</description>
+		<actionClass>jfr.webapp.placeholdermanager.UpdateFlagPlaceholderAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/editApplication" />		
+	</action>
+	
+	<action url="/updatePlaceholder" security="true" initializeAtStartup="false" >
+		<description>Modifica una applicazione</description>
+		<actionClass>jfr.webapp.placeholdermanager.UpdatePlaceholderAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/editApplication" />		
+	</action>
+	
+	
+	
+	<!--  Import & export application using XML files -->
+	<action url="/importXmlApplication" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.ImportApplicationAction</actionClass>
+		<securityProperty name="PERMISSION" 	value="importApplicationXml" />
+	</action>
+	
+	<action url="/exportXmlApplication" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.ExportApplicationAction</actionClass>
+		<securityProperty name="PERMISSION" 	value="exportApplicationXml" />
+	</action>
+	
+</ewafAction>

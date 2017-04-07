@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Action per la gestione base dell'applicazione. Queste action vanno utilizzate 
+	nel caso in cui si utilizzi il template di default offerti dal framework -->
+<ewafAction>
+
+	<action url="/listAppsForUsers" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.ListApplicationAction</actionClass>
+		<outputMapping type="Screen" name="OK"	value="/users/apps.jsp" />
+	</action>
+
+	<action url="/listUserProfileForApplication" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.users.ListUserProfilesByApplicationAction</actionClass>
+		<outputMapping type="Screen" name="OK"	value="/users/list.jsp" />
+	</action>
+	
+	<action url="/addUserProfileForApplication" security="true" initializeAtStartup="false" >
+		<description>Recupera la lista delle applicazioni</description>
+		<actionClass>jfr.webapp.placeholdermanager.users.AddUserProfilesByApplicationAction</actionClass>
+		<outputMapping type="Url" name="OK"	value="/listUserProfileForApplication" />
+	</action>
+
+	
+	
+	
+</ewafAction>

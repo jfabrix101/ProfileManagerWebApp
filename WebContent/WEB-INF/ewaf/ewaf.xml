@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ewaf version="7.0">
+
+	<applicationInfo>
+		<applicationName>ProfileManager</applicationName>
+		<applicationDescription>Application Description</applicationDescription>
+		<applicationCopyright>(C) Fabrizio Russo - www.frusso.it</applicationCopyright>
+	</applicationInfo>
+
+	<ewafProperty class="java.util.HashMap">
+		<property name="ewaf.developMode" value="false" />		<!-- Modalita' di sviluppo -->
+		<property name="ewaf.traceMode" value="false" />		<!-- Effettua il trace di tutte le operazioni del framework -->
+	</ewafProperty>
+
+	<applicationProperty class="java.util.HashMap">
+		<applicationProperty name="applicationName" 	value="ApplicationName" />
+		<applicationProperty name="applicationTitle" 	value="Profile Manager" />
+		<applicationProperty name="applicationSubTitle" value="Manage Applications, Placeholders and Profiles" />
+	</applicationProperty>
+
+	<!-- Configurazione della sicurezza con un multiProvider -->
+	<securityConfig enabled="true" providerClass="jfabrix101.ewafx.security.MultiSecurityProvider">
+		<param name="path" value="/WEB-INF/securityProviders.xml" />
+	</securityConfig>
+
+	<globalProperties class="java.util.HashMap">
+		<globalProperty name="config" value="classpath:/config.properties" />
+		<!-- 
+		<globalProperty name="mail" value="/WEB-INF/mail.properties" />
+		<globalProperty name="download" value="/WEB-INF/download/download.properties" /> -->
+		 -->
+	</globalProperties>
+
+	<exceptionHandlers class="java.util.HashMap">
+		<exceptionHandler className="java.sql.SQLException" 	handler="/exception" />
+		<exceptionHandler className="java.lang.Exception"		handler="/exception" />
+		<exceptionHandler className="jfabrix101.ewaf.security.EwafSecurityException" 	handler="/logout" />
+		<exceptionHandler className="java.lang.NullPointerException"	handler="/exception" />
+	</exceptionHandlers>
+
+	<plugins class="java.util.ArrayList">
+		 
+		 <!-- Eventualmente genera allo startup le chiavi pubbliche e private (sotto WEB-INF) -->
+		<plugin className="jfabrix101.ewafx.plugin.RsaPlugin" name="rsaPlugin">
+			<param name="keyLength" value="1024" />
+			<param name="publicKeyPath" value="/publicKey.rsa" />
+		</plugin>
+		 
+	</plugins>
+
+</ewaf>

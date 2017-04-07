@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Action per la gestione base dell'applicazione. Queste action vanno utilizzate 
+	nel caso in cui si utilizzi il template di default offerti dal framework -->
+<ewafAction>
+
+
+    <action url="/sessionExpired" screenForward="/index.jsp">
+		<description>Exception handler per sessioni scadute</description>
+	</action>
+	
+	<action url="/exception" screenForward="/ewafJspTemplate/exception.jsp" />
+	
+	<action url="/login" security="false">
+		<description>Effettua il login web</description>
+		<actionClass>jfabrix101.ewafx.action.LoginAction</actionClass>
+		<outputMapping name="ERROR" value="/login.jsp" type="Screen" />
+		
+		<!--  The result is the role name -->
+		<outputMapping name="admin" value="/index.jsp" type="Screen" />
+		<outputMapping name="user" value="/index.jsp" type="Screen" />
+		<outputMapping name="default" value="/index.jsp" type="Screen" />
+	</action> 
+	
+	<action url="/logout" security="false">
+		<actionClass>jfabrix101.ewafx.action.LogoutAction</actionClass>
+		<outputMapping type="Screen" name="OK"	value="/login.jsp" />
+	</action>
+
+	<!-- Example -->
+	<!--  
+	<action url="/actionUrl" security="false" initializeAtStartup="false" screenForward="/index.jsp">
+		<description>Ricarica i file di configurazine del framework</description>
+		<actionClass> full_class_name</actionClass>
+		<configProperty name="enabled" value="true" />
+		<outputMapping type="Screen" name="OK"	value="/index.jsp" />
+		<outputMapping type="Url" name="OK"	value="/actionUrl" />
+		<securityProperty name="ROLE" 			value="" />
+		<securityProperty name="PERMISSION" 	value="developMode" />
+	</action>
+	 -->
+</ewafAction>

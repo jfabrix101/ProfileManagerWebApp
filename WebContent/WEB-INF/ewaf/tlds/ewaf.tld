@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	
+	<tlib-version>1.0</tlib-version>
+	<short-name>ewaf</short-name>
+	<uri>ewaf</uri>
+	
+	<tag>
+		<name>developMode</name>
+		<tag-class>jfabrix101.ewaf.taglib.DevelopModeTag</tag-class>
+		<body-content>JSP</body-content>
+		
+	</tag>
+	
+	
+	<tag>
+		<name>date</name>
+		<tag-class>jfabrix101.ewaf.taglib.DateTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>format</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>loop</name>
+		<tag-class>jfabrix101.ewaf.taglib.loop.LoopTag</tag-class>
+		<tei-class>jfabrix101.ewaf.taglib.loop.LoopTagExtraInfo</tei-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>scope</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>className</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+	</tag>
+	
+	<tag>
+		<name>hasMessages</name>
+		<tag-class>jfabrix101.ewaf.taglib.HasMessagesTag</tag-class>
+		<body-content>JSP</body-content>
+		
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<name>showMessage</name>
+		<tag-class>jfabrix101.ewaf.taglib.ShowMessageTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	
+	
+	<tag>
+		<name>applicationProperty</name>
+		<tag-class>jfabrix101.ewaf.taglib.ApplicationPropertyTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<name>applicationName</name>
+		<tag-class>jfabrix101.ewaf.taglib.ApplicationNameTag</tag-class>
+		<body-content>empty</body-content>
+		
+	</tag>
+	
+	
+	<tag>
+		<name>applicationDescription</name>
+		<tag-class>jfabrix101.ewaf.taglib.ApplicationDescriptionTag</tag-class>
+		<body-content>empty</body-content>
+		
+	</tag>
+	
+	
+	<tag>
+		<name>applicationCopyright</name>
+		<tag-class>jfabrix101.ewaf.taglib.ApplicationCopyrightTag</tag-class>
+		<body-content>empty</body-content>
+		
+	</tag>
+
+
+	<tag>
+		<name>param</name>
+		<tag-class>jfabrix101.ewaf.taglib.ParamTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<name>nocache</name>
+		<tag-class>jfabrix101.ewaf.taglib.NoCacheTag</tag-class>
+		<body-content>empty</body-content>
+		
+	</tag>
+	
+	
+	<tag>
+		<name>IfUserProfilePresent</name>
+		<tag-class>jfabrix101.ewaf.taglib.IfUserProfilePresentTag</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+	
+	<tag>
+		<name>ifUserHasPermission</name>
+		<tag-class>jfabrix101.ewaf.taglib.IfUserProfileHasPermissionTag</tag-class>
+		<body-content>JSP</body-content>
+		
+		<attribute>
+			<name>permissionName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>elseInclude</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>andPermission</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>orPermission</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<name>ifUserHasRole</name>
+		<tag-class>jfabrix101.ewaf.taglib.IfUserProfileHasRuleTag</tag-class>
+		<body-content>JSP</body-content>
+		
+		<attribute>
+			<name>roleName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>elseInclude</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>andRule</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>orRule</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>pbpContainer</name>
+		<tag-class>jfabrix101.ewaf.taglib.PageByPageContainerTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>pbpNavigator</name>
+		<tag-class>jfabrix101.ewaf.taglib.PageByPageNavigator</tag-class>
+		<body-content>JSP</body-content>
+		
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>navigationViewRenderer</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>ajax</name>
+		<tag-class>jfabrix101.ewaf.taglib.AjaxTag</tag-class>
+		<body-content>empty</body-content>
+		
+		<attribute>
+			<name>sourceId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>targetId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>event</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

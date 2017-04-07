@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Context >
+	<Resource name="jdbc/myDataSource" 
+		auth="Container" type="javax.sql.DataSource" 
+		testWhileIdle="true" testOnBorrow="true"
+		testOnReturn="false" validationQuery="SELECT 1"
+		validationInterval="30000"
+		timeBetweenEvictionRunsMillis="30000"
+		maxActive="5"  minIdle="1"	maxWait="10000" 
+		initialSize="1"	removeAbandonedTimeout="60"
+		removeAbandoned="true" logAbandoned="true"
+		minEvictableIdleTimeMillis="30000" 
+		jmxEnabled="true"
+		jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"
+		driverClassName="com.mysql.jdbc.Driver"
+		username="root" 	password="root" 	url="jdbc:mysql://127.0.0.1:3306/jfrPM1"
+		/>
+</Context>
+
+
+
+ 
+ 
+ 
